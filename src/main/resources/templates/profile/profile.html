@@ -16,8 +16,10 @@
             <div class="settings-section__field" th:text="|#{settings.section.profile.lastName}${user.lastName}|"></div>
             <div class="settings-section__field"
                  th:text="#{settings.section.profile.type} + (${user.hasRole('ADMIN')}? #{account.type.admin}: (${user.hasRole('SELLER')}? #{account.type.seller}: #{account.type.buyer}))"></div>
-
-            <form th:action="@{/profile/fullNameChange}" method="post" th:object="${fullNameChangeForm}"
+            <strong>Бонусная система</strong>
+            <div class="settings-section__field">Уровень: 4</div>
+            <div class="settings-section__field">Количество заказов: 14</div>
+            <!--<form th:action="@{/profile/fullNameChange}" method="post" th:object="${fullNameChangeForm}"
                   class="settings-section__form">
                 <div class="settings-section__input-wrapper">
                     <label class="settings-section__label">
@@ -50,7 +52,7 @@
                     <span class="settings-section__error" th:errors="*{newPassword}"></span>
                 </div>
                 <button class="button settings-section__button" th:text="#{settings.section.profile.button}"></button>
-            </form>
+            </form>-->
     </th:block>
 
 </body>

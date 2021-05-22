@@ -14,6 +14,11 @@ public class ErrorController {
         return "error";
     }
 
+    @GetMapping("/confirm")
+    public String getConfirm(Model model) {
+        return "confirm";
+    }
+
     @GetMapping("/access-denied")
     public  String getAccessDenied(Model model){
         return "access-denied";

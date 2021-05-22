@@ -15,7 +15,7 @@
             <th th:text="#{settings.section.products.table.productName}"></th>
             <th th:text="#{settings.section.products.table.description}"></th>
             <th th:text="#{settings.section.products.table.cost}"></th>
-            <th th:text="#{settings.section.products.table.quantity}"></th>
+<!--            <th th:text="#{settings.section.products.table.quantity}"></th>-->
             <th th:text="#{settings.section.products.table.discount}"></th>
             <th th:text="#{settings.section.products.table.seller}"></th>
             <th th:text="#{settings.section.products.table.category}"></th>
@@ -29,7 +29,7 @@
                 <td th:text="${p.productName}"></td>
                 <td th:text="${p.description}"></td>
                 <td th:text="${p.cost}"></td>
-                <td th:text="${p.quantity}"></td>
+<!--                <td th:text="${p.quantity}"></td>-->
                 <td th:text="${p.discount}"></td>
                 <td th:text="${p.seller.login}"></td>
                 <td th:text="__${#locale}__=='en'?(${p.category.enCategory}):(${p.category.ruCategory})"></td>

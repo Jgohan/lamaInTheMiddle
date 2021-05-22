@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/main-layout}">
+<head>
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+  <link rel="stylesheet" th:href="@{/css/index_media.css}">
+  <link rel="stylesheet" th:href="@{/css/catalog.css}">
+  <link rel="stylesheet" th:href="@{/css/catalog_media.css}">
+  <link rel="stylesheet" th:href="@{/css/slick.css}"/>
+  <link rel="stylesheet" th:href="@{/css/slider.css}"/>
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+  <title th:text="#{index.title}"></title>
+</head>
+<body>
+<th:block layout:fragment="main">
+  <div class="container" >
+    <h2 align="center">Ваш заказ принят к рассмотрению представителем услуг.</h2>
+    <h3 align="center">Спасибо, что выбрали нас!</h3>
+  </div>
+</th:block>
+
+<th:block layout:fragment="jsscript">
+  <script th:src="@{/js/slick.min.js}"></script>
+  <script th:src="@{/js/index.js}"></script>
+</th:block>
+</body>
+</html>

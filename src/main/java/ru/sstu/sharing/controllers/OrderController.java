@@ -30,13 +30,14 @@ public class OrderController {
 
     @RequestMapping(value = "basket/add", produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
-    public Boolean addInBasket(String productId, Authentication authentication) {
+    public String addInBasket(String productId, Authentication authentication) {
         try {
             this.orderService.addInBasket(Long.parseLong(productId), authentication);
             Order order = this.orderService.createOrder(authentication);
-            return true;
+            return "confirm";
         } catch (UserDoesNotExist | ProductDoesNotExist | NumberFormatException e) {
-            return false;
+            System.out.println(e);
+            return "redirect:/error";
         }
     }
 

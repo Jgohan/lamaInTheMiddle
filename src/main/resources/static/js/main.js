@@ -26,13 +26,11 @@ $(document).ready(function () {
             data: "productId=" + productId,
             type: "POST",
             success: function (res) {
-                if (res) {
-                } else {
-                    $(location).attr('href', '/error');
-                }
+                    $(location).attr('href', '/confirm');
+
             },
             error: function () {
-                $(location).attr('href', '/error');
+                $(location).attr('href', '/confirm');
             }
         });
     });
