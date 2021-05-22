@@ -1,0 +1,19 @@
+package ru.sstu.sharing.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import ru.sstu.sharing.domain.entities.Category;
+
+import java.util.Optional;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
+
+    Optional<Category> findByEnCategory(String name);
+
+    Optional<Category> findByCategoryId(int id);
+
+    Optional<Category> findByEnCategoryOrRuCategory(String enCategory, String ruCategory);
+
+    @Query(nativeQuery = true, value = "SELECT * FROM category where mother_id <> 2 and mother_id <> 1 ORDER BY RAND() LIMIT 1")
+    Optional<Category> findRandomCategory();
+}
